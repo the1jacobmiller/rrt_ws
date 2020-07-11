@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="world_name" default="$(find dataspeed_dbw_gazebo)/worlds/obstacle_course.world" />
+  <arg name="headless" default="false" />
+  <arg name="use_camera_control" default="false" />
+  <arg name="physics" default="ode"/>
+
+  <param name="/use_sim_time" value="false" />
+
+  <!-- start gazebo server-->
+  <node name="gazebo" pkg="gazebo_ros" type="gzserver" respawn="false" output="screen"
+        args="-e $(arg physics) $(arg world_name)" />
+
+  <!-- start gazebo client -->
+  <group unless="$(arg headless)">
+    <arg unless="$(arg use_camera_control)" name="gzclient_args" value="" />
+    <arg     if="$(arg use_camera_control)" name="gzclient_args" value="-g libdataspeed_dbw_gazebo_plugins_cam_control.so" />
+    <node name="gazebo_gui" pkg="gazebo_ros" type="gzclient" respawn="false" args="$(arg gzclient_args)" output="screen"/>
+  </group>
+
+</launch>

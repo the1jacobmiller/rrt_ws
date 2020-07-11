@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dataspeed_dbw_gazebo</name>
+  <version>2.3.0</version>
+  <description>
+    Runtime configuration of dataspeed_dbw_simulator
+  </description>
+
+  <license>Proprietary</license>
+  <author email="mradovnikovich@dataspeedinc.com">Micho Radovnikovich</author>
+  <maintainer email="mradovnikovich@dataspeedinc.com">Micho Radovnikovich</maintainer>
+  <url type="website">http://dataspeedinc.com</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>gazebo</depend>
+
+  <exec_depend>dataspeed_dbw_gazebo_plugins</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models/" gazebo_media_path="${prefix}" />
+  </export>
+
+</package>

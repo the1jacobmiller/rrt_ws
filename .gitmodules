@@ -1,0 +1,8 @@
+[submodule "src/control"]
+	path = src/control
+	url = https://github.com/the1jacobmiller/control.git
+	branch = master
+[submodule "src/motion-planning"]
+	path = src/motion-planning
+	url = https://github.com/the1jacobmiller/motion-planning.git
+	branch = rrt

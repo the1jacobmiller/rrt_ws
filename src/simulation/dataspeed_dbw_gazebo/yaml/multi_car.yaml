@@ -1,0 +1,20 @@
+- fusion:
+    x: 0.0
+    y: 5.0
+    z: 0.0
+    yaw: 0.0
+    model: fusion
+    color: green
+    pub_tf: true
+    topic_ns: fusion
+    tf_prefix: fusion
+- pacifica:
+    x: 0.0
+    y: -5.0
+    z: 0.0
+    yaw: 0.0
+    model: pacifica
+    color: {r: 0.8, g: 0.1, b: 0.0}
+    pub_tf: true
+    topic_ns: pacifica
+    tf_prefix: pacifica

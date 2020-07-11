@@ -1,0 +1,13 @@
+- vehicle:
+    x: 0.0
+    y: 0.0
+    z: 0.1
+    yaw: 3.14
+    start_gear: D
+    color: silver
+    pub_tf: false
+    pub_odom: true
+    model: fusion
+    year: 2018
+    production_ref_lat: 45.0
+    production_ref_lon: -81.0

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <arg name="use_camera_control" default="false" />
+  <arg name="sim_param_file" default="$(find dataspeed_dbw_gazebo)/yaml/default_sim_params.yaml" />
+  <arg name="headless" default="false" />
+
+  <include file="$(find dataspeed_dbw_gazebo)/launch/gazebo_world.launch" >
+    <arg name="use_camera_control" value="$(arg use_camera_control)" />
+    <arg name="headless" value="$(arg headless)" />
+  </include>
+
+  <node pkg="dataspeed_dbw_gazebo" type="vehicle_spawner.py" name="vehicle_spawner" output="screen" >
+    <param name="sim_param_file" value="$(arg sim_param_file)" />
+  </node>
+
+</launch>
